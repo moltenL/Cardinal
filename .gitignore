@@ -1,0 +1,5 @@
+cardinal/__pycache__/
+cardinal/api/__pycache__/
+cardinal/migrations/__pycache__/
+CardinalAPI/__pycache__/
+db.sqlite3
