@@ -21,6 +21,6 @@ class DataRequestApiView(APIView):
     def get(self, request, *args, **kwargs):
 
         # TODO: pull from database
-        data = "foo"
+        data = "foobar"
 
         return Response(data, status=status.HTTP_200_OK)
