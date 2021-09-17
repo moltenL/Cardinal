@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
+from .generate_test_data import DataGenerator
 
 CARDINAL_EMOJI = "🐦"
 
@@ -31,4 +32,8 @@ class TestDataGeneratorApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
-        return Response("jake", status=status.HTTP_200_OK)
+
+        filename = kwargs["data_structure_type"] + ".yml"
+        generate_test_data = DataGenerator(filename)
+
+        return Response(generate_test_data.get_data(), status=status.HTTP_200_OK)
