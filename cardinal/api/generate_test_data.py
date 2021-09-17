@@ -1,4 +1,4 @@
-from generate_random_value import generate_random_value
+from .generate_random_value import generate_random_value
 import csv
 from dataclasses import dataclass
 from typing import List, Optional
@@ -138,7 +138,7 @@ class DataGenerator:
 
     def open_schema_file(self, schema_filename: str) -> dict:
         """Get schema file name and return opened schema"""
-        with open(schema_filename) as file:
+        with open(f"schema/{schema_filename}") as file:
             schema = yaml.load(file.read(), yaml.Loader)
         return schema
 

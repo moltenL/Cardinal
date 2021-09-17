@@ -1,5 +1,4 @@
 Django==3.2.7
-calculations==1.10
-dataclasses==0.8
+dataclasses
 djangorestframework==3.12.4
-utils==1.0.1
+PyYAML==5.4.1
