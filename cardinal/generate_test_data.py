@@ -1,8 +1,8 @@
-from calculations.generate_random_value import generate_random_value
+from generate_random_value import generate_random_value
 import csv
-import utils
 from dataclasses import dataclass
 from typing import List, Optional
+import yaml
 
 
 @dataclass
@@ -138,7 +138,8 @@ class DataGenerator:
 
     def open_schema_file(self, schema_filename: str) -> dict:
         """Get schema file name and return opened schema"""
-        schema = utils.read_schema(schema_filename)
+        with open(schema_filename) as file:
+            schema = yaml.load(file.read(), yaml.Loader)
         return schema
 
     def get_datapoint_collections_generation(self) -> dict:

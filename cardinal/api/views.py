@@ -24,3 +24,11 @@ class DataRequestApiView(APIView):
         data = "foobar"
 
         return Response(data, status=status.HTTP_200_OK)
+
+
+class TestDataGeneratorApiView(APIView):
+    # add permission to check if user is authenticated
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        return Response("jake", status=status.HTTP_200_OK)
