@@ -8,6 +8,6 @@ def read_json():
 
 
 def get_name():
-    names, weights = zip(*read_json())
-    one, two = random.choices(names, weights=weights, k=2)
+    names, _weights = zip(*read_json())
+    one, two = random.sample(names, 2)
     return f"{one}{two}"
