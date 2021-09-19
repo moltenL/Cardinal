@@ -3,6 +3,7 @@ import csv
 from dataclasses import dataclass
 from typing import List, Optional
 import yaml
+from .name_generator import get_name
 
 
 @dataclass
@@ -253,8 +254,11 @@ class DataGenerator:
                 if datapoints_values_value.get("type") is not None:
                     value_type = datapoints_values_value["type"]
                     if value_type != "Enum":
-                        # Generate value based on the value_type
-                        datapoint = generate_random_value(value_type, self.seed)
+                        if datapoints_values_key == "team_name":
+                            datapoint = get_name()
+                        else:
+                            # Generate value based on the value_type
+                            datapoint = generate_random_value(value_type, self.seed)
                         generated_structure[datapoints_values_key] = datapoint
                     else:
                         # For enum compatability
