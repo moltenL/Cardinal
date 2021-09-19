@@ -3,7 +3,7 @@ import random
 
 
 def read_json():
-    with open("teams.json") as file:
+    with open("cardinal/api/teams.json") as file:
         return json.load(file)
 
 
