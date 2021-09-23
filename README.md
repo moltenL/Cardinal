@@ -40,9 +40,6 @@ curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?f
 ]
 ```
 
-# First test
-![2021-09-15_23-59](https://user-images.githubusercontent.com/35516367/133566395-8b683eda-ba8e-4f1d-8362-dabdbd083461.png)
-
 # Roadmap
 #### 1. System architecture & framework decision
 	- Decide what framework we will use
