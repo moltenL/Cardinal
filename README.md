@@ -55,7 +55,7 @@ curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?f
 
 #### 4. Serve current competition data <b>(Currently here)</b>
 	- Pull data from Mongodb about the current competition
-	- Setup vies to serve this data
+	- Setup views to serve this data
 	- Collect time deltas per user of when the last data was pulled
 	- Setup database for time deltas
 	- Create functionality to pull data that has been changed since last pull
