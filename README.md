@@ -50,7 +50,7 @@ curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?f
 ```
 ```
 # Example with count
-curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?format=json"&count=10 \
+curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?format=json&count=10" \
   -H "Authorization: Token abc"
 ```
 
