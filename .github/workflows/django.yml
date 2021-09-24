@@ -17,6 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set Secret Key
+      env: DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
