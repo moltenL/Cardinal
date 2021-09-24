@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if secret_key := os.environ.get("DJANGO_SECRET_KEY"):
     SECRET_KEY = secret_key
 else:
-    print("WARG: Set value of DJANGO_SECRET_KEY when running in production")
+    print("WARN: Set value of DJANGO_SECRET_KEY when running in production")
     print("INFO: Using key exposed in code")
     SECRET_KEY = "GdXGMzSijs1Pj0XCA5wB1TEru/mCUqCx/tSZytkRARhQwMpx7Up9OSy8hsL"
 
