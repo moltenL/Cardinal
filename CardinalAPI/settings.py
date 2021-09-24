@@ -22,9 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", False)
 if not SECRET_KEY:
-    print("WARN: Set value of DJANGO_SECRET_KEY when running in production")
-    print("INFO: Using key exposed in code")
-    SECRET_KEY = "GdXGMzSijs1Pj0XCA5wB1TEru/mCUqCx/tSZytkRARhQwMpx7Up9OSy8hsL"
+    raise Exception("DJANGO_SECRET_KEY was not set before running")
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
