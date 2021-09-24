@@ -8,6 +8,32 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 
 # Setup
 1. Change the value of the file secret_key
+	- We need to change the secret key when we are running in production
+
+
+2. python3 manage.py migrate
+	- Create and update the database
+
+	```
+	python3 manage.py migrate
+	```
+
+
+3. python3 manage.py createsuperuser
+	- Create the admin account used for making a auth token
+
+	```
+	python3 manage.py createsuperuser
+	```
+	
+
+4. Create an auth token
+	- Run the server
+	- Open the website at /admin
+	- Log in
+	- Create a new token
+	- Copy that token into the request
+	
 
 # Usage
 
@@ -16,12 +42,18 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 # Format
 curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/<schema_name>/?format=json" \
   -H "Authorization: Token abc"
-
+```
+```
 # Example
 curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?format=json" \
   -H "Authorization: Token abc"
-
 ```
+```
+# Example with count
+curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?format=json&count=10" \
+  -H "Authorization: Token abc"
+```
+
 #### Output
 ```json
 [
