@@ -109,5 +109,5 @@ curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?f
 #### 7. Full systems test
 	- Run the server with test data from scouts
 	- Run this web server and pull data from it
-	- Test Viewer and it's ability to pull data
+	- Test Viewer and its ability to pull data
 
