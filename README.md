@@ -34,8 +34,14 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 	- Create a new token
 	- Copy that token into the request
 	
+# Running
+1. Make sure to finish with setup steps
+2. Start the server
+	```
+	python3 manage.py runserver 8001
+	```
 
-# Usage
+# API Usage
 
 ## Test Data Generator
 ```
