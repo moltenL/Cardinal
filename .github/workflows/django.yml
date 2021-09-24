@@ -22,7 +22,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Set Secret Key
-      env: DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+      env:
+        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
