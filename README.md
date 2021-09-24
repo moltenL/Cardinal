@@ -12,7 +12,7 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 	- This key should never be on git
 	- You can use this command to generate a key
 	```
-	dd if=/dev/urandom bs=60 count=1 | base64
+	dd if=/dev/urandom bs=60 count=1 | base64 > secret_key
 	```
 
 2. python3 manage.py migrate
