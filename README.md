@@ -47,8 +47,13 @@ curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/<schema_name>/?format=j
 # Example
 curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?format=json" \
   -H "Authorization: Token abc"
-
 ```
+```
+# Example with count
+curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?format=json"&count=10 \
+  -H "Authorization: Token abc"
+```
+
 #### Output
 ```json
 [
