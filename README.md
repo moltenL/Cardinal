@@ -34,8 +34,14 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 	- Create a new token
 	- Copy that token into the request
 	
+# Running
+1. Make sure to finish with setup steps
+2. Start the server
+	```
+	python3 manage.py runserver 8001
+	```
 
-# Usage
+# API Usage
 
 ## Test Data Generator
 ```
@@ -103,5 +109,5 @@ curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?f
 #### 7. Full systems test
 	- Run the server with test data from scouts
 	- Run this web server and pull data from it
-	- Test Viewer and it's ability to pull data
+	- Test Viewer and its ability to pull data
 
