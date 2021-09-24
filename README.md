@@ -8,6 +8,8 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 
 # Setup
 1. Change the value of the file secret_key
+2. python3 manage.py migrate
+3. python3 manage.py createsuperuser
 
 # Usage
 
