@@ -16,7 +16,8 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 # Format
 curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/<schema_name>/?format=json" \
   -H "Authorization: Token abc"
-
+```
+```
 # Example
 curl -X GET "http://127.0.0.1:8000/cardinal/api/generate/calc_tba_team_schema/?format=json" \
   -H "Authorization: Token abc"
