@@ -7,9 +7,13 @@ Cardinal is a web server that serves data from the frc1678/server project to the
 There are two main uses for Cardinal. Both involve serving data to the Viewer app. The most important data that is sent is from the frc1678/server project and is current match and competition data. The second type of data is auto generated testing data.
 
 # Setup
-1. Change the value of the file secret_key
-	- We need to change the secret key when we are running in production
-
+1. Create a file in the base of the git directory called "secret_key"
+	- This key needs to be completely original
+	- This key should never be on git
+	- You can use this command to generate a key
+	```
+	dd if=/dev/urandom bs=60 count=1 | base64
+	```
 
 2. python3 manage.py migrate
 	- Create and update the database
