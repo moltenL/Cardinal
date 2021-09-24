@@ -1,0 +1,35 @@
+obj_pit_collection: list
+subj_pit_collection: list
+calc_obj_tim: list
+calc_obj_team: list
+calc_subj_team: list
+calc_predicted_aim: list
+calc_predicted_team: list
+calc_tba_team: list
+calc_pickability: list
+
+# These are used by viewer
+# obj_pit_collection
+# subj_pit_collection
+# calc_obj_tim
+# calc_obj_team
+# calc_subj_team
+# calc_predicted_aim
+# calc_predicted_team
+# calc_tba_team
+# calc_pickability
+
+# These are not used by viewer
+# calc_tba_tim
+# calc_spr
+
+# Here is the code for the data classes that viewer has
+# var raw_obj_pit: MutableList<ObjectivePit> = mutableListOf(),
+# var raw_subj_pit: MutableList<SubjectivePit> = mutableListOf(),
+# var obj_tim: MutableList<CalculatedObjectiveTeamInMatch> = mutableListOf(),
+# var obj_team: MutableList<CalculatedObjectiveTeam> = mutableListOf(),
+# var subj_team: MutableList<CalculatedSubjectiveTeam> = mutableListOf(),
+# var predicted_aim: MutableList<CalculatedPredictedAllianceInMatch> = mutableListOf(),
+# var predicted_team: MutableList<CalculatedPredictedTeam> = mutableListOf(),
+# var tba_team: MutableList<CalculatedTBATeam> = mutableListOf(),
+# var pickability: MutableList<CalculatedPickAbilityTeam> = mutableListOf()
