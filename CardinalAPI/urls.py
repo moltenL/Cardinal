@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url
+from cardinal.views import index
+from django.conf.urls import handler400, handler403, handler404, handler500
+
+handler404 = "cardinal.views.page_not_found"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("cardinal/", include("cardinal.urls")),
+    path('', index, name='index'),
 ]
