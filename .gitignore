@@ -4,3 +4,4 @@ cardinal/migrations/__pycache__/
 CardinalAPI/__pycache__/
 db.sqlite3
 secret_key
+request_log.txt
