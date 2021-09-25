@@ -14,7 +14,7 @@ _FILE_PATH = 'request_log.txt'
 # def function():
 #   # code
 # function = decorator(function)
-# This decorator is applied to every as_view operation so that each one has
+# This decorator is applied to every get operation so that each one has
 # logging code inserted.
 def request_logged(fn):
     def new_fn(cself, request, *args, **kwargs):
