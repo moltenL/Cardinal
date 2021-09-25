@@ -1,9 +1,11 @@
-from django.http import HttpResponse
+from django.shortcuts import render, render
+
+from django.template import RequestContext
 
 
-def index(_):
-    page = """<div>
-    <h1>Cardinal 🐦</h1>
-    <h4>Source: <a href=https://github.com/jakeroggenbuck/Cardinal>Github</a></h4>
-    </div>"""
-    return HttpResponse(page)
+def index(request):
+    return render(request, "index.html")
+
+
+def page_not_found(request, exception=None):
+    return render(request, "page_not_found.html")

@@ -2,7 +2,6 @@ from django.conf.urls import url
 from django.urls import path, include
 from .views import InitialApiView, DataRequestApiView, TestDataGeneratorApiView, api_docs
 
-
 urlpatterns = [
     path("hello/", InitialApiView.as_view()),
 

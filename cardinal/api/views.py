@@ -3,24 +3,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 from .generate_test_data import DataGenerator
-from django.http import HttpResponse
+from django.shortcuts import render
+
 
 CARDINAL_EMOJI = "🐦"
 
 
-def api_docs(_):
-    page = """<div>
-    <h1>Cardinal 🐦</h1>
-    <h4>API</h4>
-
-    <ul>
-        <li>/api/hello</li>
-        <li>/api/all</li>
-        <li>/api/generate/&lt;str:data_structure_type&gt;</li>
-        <li>/api/generate/&lt;str:data_structure_type&gt;/?count=int</li>
-    </ul>
-    </div>"""
-    return HttpResponse(page)
+def api_docs(request):
+    return render(request, "docs.html")
 
 class InitialApiView(APIView):
     # add permission to check if user is authenticated
