@@ -30,7 +30,7 @@ def logger(cself, request, fn, *args, **kwargs):
     name = fn.__qualname__
     # (classname).get -> ['classname', 'get'] -> 'classname'
     calling_class = name.split('.')[0]
-    args_string = "\n".join(("\t" + str(arg)) for arg in args) + "\n" if len(args) == 1 else "[no arguments]"
+    args_string = "\n".join(("\t" + str(arg)) for arg in args) + "\n" if len(args) != 0 else "[no arguments]"
     timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     log_file.write(f"""Date: {timestamp}
 Request type: {calling_class}
