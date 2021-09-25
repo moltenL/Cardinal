@@ -5,17 +5,18 @@ from os import path
 
 _FILE_PATH = 'request_log.txt'
 
-# THE MAIN DECORATOR
-# Please look up how decorators work, but in essence:
-# @decorator
-# def function():
-#   # code
-# is equivalent to:
-# def function():
-#   # code
-# function = decorator(function)
-# This decorator is applied to every get operation so that each one has
-# logging code inserted.
+"""THE MAIN DECORATOR
+Please look up how decorators work, but in essence:
+@decorator
+def function():
+  # code
+is equivalent to:
+def function():
+  # code
+function = decorator(function)
+This decorator is applied to every get operation so that each one has
+logging code inserted.
+"""
 def request_logged(fn):
     def new_fn(cself, request, *args, **kwargs):
         logger(cself, request, fn, *args, **kwargs)
