@@ -15,6 +15,7 @@ CARDINAL_EMOJI = "🐦"
 def api_docs(request):
     return render(request, "docs.html")
 
+
 class InitialApiView(APIView):
     # add permission to check if user is authenticated
     permission_classes = [permissions.IsAuthenticated]

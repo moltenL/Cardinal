@@ -4,7 +4,6 @@ from .views import InitialApiView, DataRequestApiView, TestDataGeneratorApiView,
 
 urlpatterns = [
     path("hello/", InitialApiView.as_view()),
-
     path("all/", DataRequestApiView.as_view()),
     path("generate/<str:data_structure_type>/", TestDataGeneratorApiView.as_view()),
     path('', api_docs, name='index'),

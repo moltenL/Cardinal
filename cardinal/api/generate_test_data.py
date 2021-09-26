@@ -38,9 +38,7 @@ class TIMInstanceGenerator:
             num_teams = 42
             num_matches = 118
             # Create a fake list of teams
-            teams: List[int] = [1678] + [
-                int(str(x ** x)[0:4]) for x in range(1, num_teams)
-            ]
+            teams: List[int] = [1678] + [int(str(x ** x)[0:4]) for x in range(1, num_teams)]
 
             # Generate a TIM instance for each match
             for match_number in range(1, num_matches + 1):
@@ -50,15 +48,11 @@ class TIMInstanceGenerator:
                 end_team_index = (start_team_index + 6) % num_teams
                 # This is needed if the num_teams is not divisible by 6
                 if end_team_index < start_team_index:
-                    teams_in_match = [
-                        teams[x] for x in range(start_team_index, num_teams)
-                    ]
+                    teams_in_match = [teams[x] for x in range(start_team_index, num_teams)]
                     teams_in_match.extend([teams[x] for x in range(0, end_team_index)])
                 # This is for the other cases
                 else:
-                    teams_in_match = [
-                        teams[x] for x in range(start_team_index, end_team_index)
-                    ]
+                    teams_in_match = [teams[x] for x in range(start_team_index, end_team_index)]
 
                 for team_number in teams_in_match:
                     self.tims.append(TIMInstance(match_number, team_number))
@@ -73,9 +67,7 @@ class TIMInstanceGenerator:
                 match_number: int = int(match[0])
                 # Get all the team numbers for the match and remove the color
                 # prefix, and the dash
-                team_numbers: List[int] = [
-                    int(item.split("-")[1]) for item in match[1:]
-                ]
+                team_numbers: List[int] = [int(item.split("-")[1]) for item in match[1:]]
                 # Make a match instance for each team number, using the match number
                 for team_number in team_numbers:
                     new_match: TIMInstance = TIMInstance(match_number, team_number)
@@ -132,9 +124,7 @@ class DataGenerator:
         """Get schema filename and seed for generation"""
         self.seed = seed
         self.match_schedule_file_path = match_schedule_file_path
-        self.tim_instance_generator = TIMInstanceGenerator(
-            self.match_schedule_file_path
-        )
+        self.tim_instance_generator = TIMInstanceGenerator(self.match_schedule_file_path)
         self.schema_filename = schema_filename
 
     def open_schema_file(self, schema_filename: str) -> dict:
