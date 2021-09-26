@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 
+import cardinal
 from .generate_test_data import DataGenerator
 from .logger import request_logged
 from django.shortcuts import render
@@ -31,8 +32,7 @@ class DataRequestApiView(APIView):
     @request_logged
     def get(self, request, *args, **kwargs):
 
-        # TODO: pull from database
-        data = "foobar"
+        data = cardinal.get_data()
 
         return Response(data, status=status.HTTP_200_OK)
 
