@@ -15,10 +15,8 @@ SchemaView = get_schema_view(
     description="Cardinal",
     version="1.0.0",
     public=True,
+    permission_classes=[AllowAny]
 )
-
-class OpenSchemaView(SchemaView):
-    permission_classes = [AllowAny]
 
 urlpatterns = [
     path("hello/", InitialApiView.as_view()),
@@ -26,7 +24,7 @@ urlpatterns = [
     path("generate/<str:data_structure_type>/", TestDataGeneratorApiView.as_view()),
     url(
         r'^openapi-schema',
-        OpenSchemaView,
+        SchemaView,
         name='openapi-schema',
     ),
     url(
