@@ -2,7 +2,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
-from django.shortcuts import render
 
 from .generate_test_data import DataGenerator
 from .logger import request_logged
@@ -13,7 +12,7 @@ CARDINAL_EMOJI = "🐦"
 
 class InitialApiView(APIView):
     # add permission to check if user is authenticated
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     @request_logged
     def get(self, request, *args, **kwargs):
