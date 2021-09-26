@@ -46,6 +46,8 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 
 # API Usage
 
+![image](https://user-images.githubusercontent.com/35516367/134791549-4c3fac97-e14e-4679-8930-1e44b0286e3a.png)
+
 ## Test Data Generator
 ```
 # Format
