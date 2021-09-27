@@ -30,13 +30,20 @@ class CollectionDataRequestApiView(APIView):
     # add permission to check if user is authenticated
     permission_classes = [permissions.IsAuthenticated]
 
-    @request_logged
     def get(self, request, *args, **kwargs):
         collection_name = kwargs["collection_name"]
 
         # Returns all the database documents that have not been sent
         data = cardinal_data_request.get_unsent_docs(collection_name)
         return Response(data, status=status.HTTP_200_OK)
+
+
+class SupportedCollectionsApiView(APIView):
+    # add permission to check if user is authenticated
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        return Response(cardinal_data_request.COLLECTIONS, status=status.HTTP_200_OK)
 
 
 class TestDataGeneratorApiView(APIView):
