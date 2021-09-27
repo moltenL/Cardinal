@@ -16,7 +16,6 @@ Bug reports should be made at [Cardinal Issues](https://github.com/JakeRoggenbuc
 ### Assignment norms
 - Before something is being worked on, make an issue for it
 - Issues should be split between contributors
-- One person should only have three at most open PRs
 
 ### Working norms
 - In an issue, explain your initial ideas for the PR
