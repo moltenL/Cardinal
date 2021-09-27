@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 manage.py runserver 8001
+python3 manage.py runserver
