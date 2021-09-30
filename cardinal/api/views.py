@@ -25,6 +25,7 @@ class CollectionDataRequestApiView(APIView):
     # add permission to check if user is authenticated
     permission_classes = [permissions.IsAuthenticated]
 
+    @request_logged
     def get(self, request, *args, **kwargs):
         collection_name = kwargs["collection_name"]
 
@@ -37,12 +38,12 @@ class SupportedCollectionsApiView(APIView):
     # add permission to check if user is authenticated
     permission_classes = [permissions.IsAuthenticated]
 
+    @request_logged
     def get(self, request, *args, **kwargs):
         return Response(cardinal_data_request.COLLECTIONS, status=status.HTTP_200_OK)
 
 
 class TestDataGeneratorApiView(APIView):
-    # add permission to check if user is authenticated
     permission_classes = [permissions.IsAuthenticated]
 
     @request_logged
@@ -59,3 +60,26 @@ class TestDataGeneratorApiView(APIView):
             count = 1
 
         return Response(generate_test_data.get_data(count), status=status.HTTP_200_OK)
+
+
+class MatchScheduleApiView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    @request_logged
+    def get(self, request, *args, **kwargs):
+        comp_code = kwargs["comp_code"]
+        data = cardinal_data_request.get_match_schedule(comp_code)
+
+        return Response(data, status=status.HTTP_200_OK)
+
+
+class TeamsListApiView(APIView):
+    # add permission to check if user is authenticated
+    permission_classes = [permissions.IsAuthenticated]
+
+    @request_logged
+    def get(self, request, *args, **kwargs):
+        comp_code = kwargs["comp_code"]
+        data = cardinal_data_request.get_teams_list(comp_code)
+
+        return Response(data, status=status.HTTP_200_OK)
