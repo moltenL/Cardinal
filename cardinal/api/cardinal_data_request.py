@@ -25,9 +25,11 @@ def get_unsent_docs(collection_name: str):
         return f"The collection '{collection_name}' does not exist. \
 To get a list of supported collections, look at /api/supported-collections/"
 
+
 def get_match_schedule(comp_code: str):
     # TODO: return the match schedule
     return f"competition code '{comp_code}'"
+
 
 def get_teams_list(comp_code: str):
     # TODO: Get the teams list and return it
