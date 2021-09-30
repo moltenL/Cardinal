@@ -22,7 +22,7 @@ Bug reports should be made at [Cardinal Issues](https://github.com/JakeRoggenbuc
 
 ### Discussion norms
 - Discussions will happen both in person, and on the [Discussion Page](https://github.com/JakeRoggenbuck/Cardinal/discussions)
-- We will try to put every decision made and discussion summary on Github along with any drawings made at an in person meeting
+- We will try to put every decision made and discussion summary on Github, along with any drawings made at an in person meeting
 
 ### Code Style
 - We use a format checker to keep style consistent
