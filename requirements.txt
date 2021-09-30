@@ -2,3 +2,4 @@ Django==3.2.7
 dataclasses
 djangorestframework==3.12.4
 PyYAML==5.4.1
+black==21.9b0 

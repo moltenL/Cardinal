@@ -5,4 +5,3 @@ urlpatterns = [
     path('api/', include('cardinal.api.urls')),
     path('', index, name='index'),
 ]
-
