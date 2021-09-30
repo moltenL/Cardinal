@@ -4,6 +4,9 @@ from .views import (
     InitialApiView,
     DataRequestApiView,
     TestDataGeneratorApiView,
+    CollectionDataRequestApiView,
+    TestDataGeneratorApiView,
+    SupportedCollectionsApiView,
 )
 from django.views.generic import TemplateView
 from rest_framework.schemas import get_schema_view
@@ -15,13 +18,11 @@ SchemaView = get_schema_view(
     description="Cardinal",
     version="1.0.0",
     public=True,
-    permission_classes=[AllowAny]
+    permission_classes=[AllowAny],
 )
 
 urlpatterns = [
     path("hello/", InitialApiView.as_view()),
-    path("all/", DataRequestApiView.as_view()),
-    path("generate/<str:data_structure_type>/", TestDataGeneratorApiView.as_view()),
     url(
         r'^openapi-schema',
         SchemaView,
@@ -35,4 +36,8 @@ urlpatterns = [
         ),
         name='swagger-ui',
     ),
+    path("collection/<str:collection_name>/", CollectionDataRequestApiView.as_view()),
+    path("supported-collections/", SupportedCollectionsApiView.as_view()),
+    path("generate/<str:data_structure_type>/", TestDataGeneratorApiView.as_view()),
+    path("", api_docs, name="index"),
 ]
