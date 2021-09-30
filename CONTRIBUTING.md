@@ -9,7 +9,7 @@ Bug reports should be made at [Cardinal Issues](https://github.com/JakeRoggenbuc
 
 ### Review norms
 - To get a PR merged, you need at least one review from a contributor
-- Approval messages should be clear and concise. (E.g. "Looks good.", "Review")
+- Approval messages should be clear and concise (e.g. "Looks good.", "Review")
 - PRs should pass all tests. If a test is broken, add that as a bug report
 
 ### Assignment norms
@@ -22,7 +22,7 @@ Bug reports should be made at [Cardinal Issues](https://github.com/JakeRoggenbuc
 
 ### Discussion norms
 - Discussions will happen both in person, and on the [Discussion Page](https://github.com/JakeRoggenbuck/Cardinal/discussions)
-- We will try to put every decision made and discussion summary, on Github along with any drawings made at an in person meeting
+- We will try to put every decision made and discussion summary on Github along with any drawings made at an in person meeting
 
 ### Code Style
 - We use a format checker to keep style consistent
