@@ -1,7 +1,7 @@
 # Cardinal
 Cardinal is a web server that serves data from the frc1678/server project to the frc1678/viewer project.
 
-![image](https://user-images.githubusercontent.com/35516367/134759890-bbc24731-eed9-42d2-94a0-822dc26c9d73.png)
+![image](https://user-images.githubusercontent.com/35516367/134791598-f5f74a83-e551-4986-abc8-a08078a237f6.png)
 
 # Use
 There are two main uses for Cardinal. Both involve serving data to the Viewer app. The most important data that is sent is from the frc1678/server project and is current match and competition data. The second type of data is auto generated testing data.
@@ -49,6 +49,8 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 
 
 # API Usage
+
+![image](https://user-images.githubusercontent.com/35516367/134791549-4c3fac97-e14e-4679-8930-1e44b0286e3a.png)
 
 ## Test Data Generator
 ```

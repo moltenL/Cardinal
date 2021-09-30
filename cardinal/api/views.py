@@ -6,19 +6,14 @@ from rest_framework import permissions
 from cardinal.api import cardinal_data_request
 from .generate_test_data import DataGenerator
 from .logger import request_logged
-from django.shortcuts import render
 
 
 CARDINAL_EMOJI = "🐦"
 
 
-def api_docs(request):
-    return render(request, "docs.html")
-
-
 class InitialApiView(APIView):
     # add permission to check if user is authenticated
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     @request_logged
     def get(self, request, *args, **kwargs):
