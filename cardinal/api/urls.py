@@ -2,7 +2,6 @@ from django.conf.urls import url
 from django.urls import path, include
 from .views import (
     InitialApiView,
-    DataRequestApiView,
     TestDataGeneratorApiView,
     CollectionDataRequestApiView,
     TestDataGeneratorApiView,
@@ -39,5 +38,4 @@ urlpatterns = [
     path("collection/<str:collection_name>/", CollectionDataRequestApiView.as_view()),
     path("supported-collections/", SupportedCollectionsApiView.as_view()),
     path("generate/<str:data_structure_type>/", TestDataGeneratorApiView.as_view()),
-    path("", api_docs, name="index"),
 ]
