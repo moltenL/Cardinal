@@ -6,6 +6,7 @@ from rest_framework import permissions
 from cardinal.api import cardinal_data_request
 from .generate_test_data import DataGenerator
 from .logger import request_logged
+from pathlib import Path
 
 
 CARDINAL_EMOJI = "🐦"
@@ -59,7 +60,10 @@ class TestDataGeneratorApiView(APIView):
         else:
             count = 1
 
-        return Response(generate_test_data.get_data(count), status=status.HTTP_200_OK)
+        if Path(f"schema/{filename}").exists():
+            return Response(generate_test_data.get_data(count), status=status.HTTP_200_OK)
+        else:
+            return Response(f"The schema file {filename} doesn't exist.", status=status.HTTP_200_OK)
 
 
 class MatchScheduleApiView(APIView):
