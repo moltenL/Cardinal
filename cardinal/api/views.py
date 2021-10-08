@@ -32,6 +32,16 @@ class CollectionDataRequestApiView(APIView):
 
         # Returns all the database documents that have not been sent
         data = cardinal_data_request.get_unsent_docs(collection_name)
+
+        # If test requested, overwrite test data
+        if "test" in request.query_params:
+            try:
+                file = open(f"cardinal/api/hardcoded_test_data/{collection_name}.json")
+                data = file.read()
+                file.close()
+            except FileNotFoundError:
+                return Response(f'Test {collection_name} data not found.', status=status.HTTP_404_NOT_FOUND)
+        
         return Response(data, status=status.HTTP_200_OK)
 
 
