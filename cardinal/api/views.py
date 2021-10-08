@@ -40,8 +40,10 @@ class CollectionDataRequestApiView(APIView):
                 data = file.read()
                 file.close()
             except FileNotFoundError:
-                return Response(f'Test {collection_name} data not found.', status=status.HTTP_404_NOT_FOUND)
-        
+                return Response(
+                    f'Test {collection_name} data not found.', status=status.HTTP_404_NOT_FOUND
+                )
+
         return Response(data, status=status.HTTP_200_OK)
 
 
