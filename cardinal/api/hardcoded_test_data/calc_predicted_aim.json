@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "60a3487b2eaffeba84e39191"
-    },
     "match_number": 1,
     "alliance_color_is_red": true,
     "predicted_score": 422.58142857142855,

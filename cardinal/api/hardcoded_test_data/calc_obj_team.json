@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "60a347f02eaffeba84e39190"
-    },
     "auto_avg_balls_high": 3.8381,
     "auto_avg_balls_low": 56.4716,
     "auto_avg_balls_total": 10.4353,
