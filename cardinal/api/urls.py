@@ -8,6 +8,7 @@ from .views import (
     SupportedCollectionsApiView,
     MatchScheduleApiView,
     TeamsListApiView,
+    LogFileApiView,
 )
 from django.views.generic import TemplateView
 from rest_framework.schemas import get_schema_view
@@ -42,4 +43,5 @@ urlpatterns = [
     path("generate/<str:data_structure_type>/", TestDataGeneratorApiView.as_view()),
     path("match-schedule/<str:comp_code>/", MatchScheduleApiView.as_view()),
     path("teams-list/<str:comp_code>/", TeamsListApiView.as_view()),
+    path("log-file/", LogFileApiView.as_view()),
 ]
