@@ -1,3 +1,4 @@
+from pathlib import Path
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -6,9 +7,7 @@ import json
 
 from cardinal.api import cardinal_data_request
 from .generate_test_data import DataGenerator
-from .logger import request_logged
-from rest_framework import permissions
-from pathlib import Path
+from .logger import _FILE_PATH, request_logged
 
 
 CARDINAL_EMOJI = "🐦"
@@ -98,3 +97,15 @@ class TeamsListApiView(APIView):
         data = cardinal_data_request.get_teams_list(comp_code)
 
         return Response(data, status=status.HTTP_200_OK)
+
+
+class LogFileApiView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    @request_logged
+    def get(self, request, *args, **kwargs):
+        try:
+            with open(_FILE_PATH, 'r') as log_file:
+                return Response(log_file.read(), status=status.HTTP_200_OK)
+        except FileNotFoundError:
+            return Response('No log file data available.', status=HTTP_404_NOT_FOUND)
